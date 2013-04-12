@@ -1,0 +1,87 @@
+# data file for the Fltk User Interface Designer (fluid)
+version 1.0011 
+header_name {.h} 
+code_name {.cpp} 
+gridx 4 
+gridy 4 
+snap 4
+class ImgFilterUI {open
+} {
+  Function {ImgFilterUI()} {open
+  } {
+    Fl_Window mainWindow {
+      label {Image Filter UI} open
+      xywh {470 150 445 439} visible
+    } {
+      Fl_Output mouseInfo {
+        label {mouse status:}
+        xywh {92 411 353 28}
+      }
+      Fl_Menu_Bar mainMenu {open
+        xywh {0 0 444 28}
+      } {
+        submenu {} {
+          label {&File} open
+          xywh {0 0 100 20}
+        } {
+          menuitem {} {
+            label {&Open...}
+            callback {imgView->OpenImage();}
+            xywh {0 0 100 20}
+          }
+          menuitem {} {
+            label {&Save}
+            callback {imgView->SaveImage();}
+            xywh {0 0 100 20}
+          }
+          menuitem {} {
+            label {&Exit}
+            callback {imgView->HideAll();
+hide();}
+            xywh {0 0 100 20}
+          }
+        }
+        submenu {} {
+          label {&Tools} open
+          xywh {0 0 100 20}
+        } {
+          menuitem {} {
+            label {&Filter}
+            callback {imgView->TryFilter();}
+            xywh {0 0 100 20}
+          }
+          menuitem {} {
+            label {&Brush}
+            callback {imgView->TryBrush();}
+            xywh {0 0 100 20}
+          }
+        }
+        submenu {} {
+          label {&Help} open
+          xywh {4 4 100 20}
+        } {
+          menuitem {} {
+            label {&My Image Filter?}
+            callback {imgView->AboutMe();} selected
+            xywh {0 0 100 20}
+          }
+        }
+      }
+      Fl_Box imgView {
+        xywh {0 32 444 376} box DOWN_BOX
+        code0 {\#include "imgflt.h"}
+        class ImgView
+      }
+    }
+  }
+  Function {show()} {open
+  } {
+    code {imgView->mouseInfo = mouseInfo;
+mainWindow->resizable(imgView);
+mainWindow->show();} {}
+  }
+  Function {hide()} {open
+  } {
+    code {mainWindow->hide();} {}
+  }
+} 

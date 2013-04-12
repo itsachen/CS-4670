@@ -1,0 +1,187 @@
+# data file for the Fltk User Interface Designer (fluid)
+version 1.0011 
+header_name {.h} 
+code_name {.cpp} 
+gridx 4 
+gridy 4 
+snap 4
+class FltDesignUI {open
+} {
+  Function {FltDesignUI()} {open
+  } {
+    Fl_Window mainWindow {
+      label {Filter Design UI} open selected
+      xywh {492 214 439 249}
+      code0 {\#include "imgflt.h"} visible
+    } {
+      Fl_Group kernel {
+        label {Filter Kernel} open
+        xywh {0 20 272 140} box ENGRAVED_FRAME when 1
+      } {
+        Fl_Value_Input ele0 {
+          callback {imgView->UpdateFilter();}
+          xywh {5 26 50 25} maximum 255
+        }
+        Fl_Value_Input ele1 {
+          callback {imgView->UpdateFilter();}
+          xywh {58 26 50 25} maximum 255
+        }
+        Fl_Value_Input ele2 {
+          callback {imgView->UpdateFilter();}
+          xywh {111 26 50 25} maximum 255
+        }
+        Fl_Value_Input ele3 {
+          callback {imgView->UpdateFilter();}
+          xywh {164 26 50 25} maximum 255
+        }
+        Fl_Value_Input ele4 {
+          callback {imgView->UpdateFilter();}
+          xywh {217 26 50 25} maximum 255
+        }
+        Fl_Value_Input ele5 {
+          callback {imgView->UpdateFilter();}
+          xywh {5 52 50 25} maximum 255
+        }
+        Fl_Value_Input ele6 {
+          callback {imgView->UpdateFilter();}
+          xywh {58 52 50 25} maximum 255
+        }
+        Fl_Value_Input ele7 {
+          callback {imgView->UpdateFilter();}
+          xywh {111 52 50 25} maximum 255
+        }
+        Fl_Value_Input ele8 {
+          callback {imgView->UpdateFilter();}
+          xywh {164 52 50 25} maximum 255
+        }
+        Fl_Value_Input ele9 {
+          callback {imgView->UpdateFilter();}
+          xywh {217 52 50 25} maximum 255
+        }
+        Fl_Value_Input ele10 {
+          callback {imgView->UpdateFilter();}
+          xywh {5 78 50 25} maximum 255
+        }
+        Fl_Value_Input ele11 {
+          callback {imgView->UpdateFilter();}
+          xywh {58 78 50 25} maximum 255
+        }
+        Fl_Value_Input ele12 {
+          callback {imgView->UpdateFilter();}
+          xywh {111 78 50 25} maximum 255 value 1
+        }
+        Fl_Value_Input ele13 {
+          callback {imgView->UpdateFilter();}
+          xywh {164 78 50 25} maximum 255
+        }
+        Fl_Value_Input ele14 {
+          callback {imgView->UpdateFilter();}
+          xywh {217 78 50 25} maximum 255
+        }
+        Fl_Value_Input ele15 {
+          callback {imgView->UpdateFilter();}
+          xywh {5 104 50 25} maximum 255
+        }
+        Fl_Value_Input ele16 {
+          callback {imgView->UpdateFilter();}
+          xywh {58 104 50 25} maximum 255
+        }
+        Fl_Value_Input ele17 {
+          callback {imgView->UpdateFilter();}
+          xywh {111 104 50 25} maximum 255
+        }
+        Fl_Value_Input ele18 {
+          callback {imgView->UpdateFilter();}
+          xywh {164 104 50 25} maximum 255
+        }
+        Fl_Value_Input ele19 {
+          callback {imgView->UpdateFilter();}
+          xywh {217 104 50 25} maximum 255
+        }
+        Fl_Value_Input ele20 {
+          callback {imgView->UpdateFilter();}
+          xywh {5 130 50 25} maximum 255
+        }
+        Fl_Value_Input ele21 {
+          callback {imgView->UpdateFilter();}
+          xywh {58 130 50 25} maximum 255
+        }
+        Fl_Value_Input ele22 {
+          callback {imgView->UpdateFilter();}
+          xywh {111 130 50 25} maximum 255
+        }
+        Fl_Value_Input ele23 {
+          callback {imgView->UpdateFilter();}
+          xywh {164 130 50 25} maximum 255
+        }
+        Fl_Value_Input ele24 {
+          callback {imgView->UpdateFilter();}
+          xywh {217 130 50 25} maximum 255
+        }
+      }
+      Fl_Value_Input scale {
+        label {Divide by::}
+        callback {imgView->UpdateFilter();}
+        xywh {112 163 154 25} maximum 255 value 1
+      }
+      Fl_Value_Input offset {
+        label {Offset:}
+        callback {imgView->UpdateFilter();}
+        xywh {112 191 154 25} maximum 255
+      }
+      Fl_Group {} {
+        label {Filter Range} open
+        xywh {280 20 160 64} box ENGRAVED_FRAME
+      } {
+        Fl_Round_Button image {
+          label {Whole Image}
+          xywh {284 27 68 28} type Radio down_box ROUND_DOWN_BOX
+        }
+        Fl_Round_Button selection {
+          label {Brush Selection}
+          xywh {284 51 68 28} type Radio down_box ROUND_DOWN_BOX
+        }
+      }
+      Fl_Button {} {
+        label Load
+        callback {imgView->LoadFilter();}
+        xywh {4 224 124 24}
+      }
+      Fl_Button {} {
+        label Save
+        callback {imgView->SaveFilter();}
+        xywh {144 224 124 24}
+      }
+      Fl_Button {} {
+        label Preview
+        callback {imgView->PreviewFilter();}
+        xywh {280 125 156 24}
+      }
+      Fl_Button {} {
+        label Cancel
+        callback {imgView->CancelFilter();}
+        xywh {280 159 156 24}
+      }
+      Fl_Button {} {
+        label Accept
+        callback {imgView->AcceptFilter();}
+        xywh {280 192 156 24}
+      }
+      Fl_Button {} {
+        label Close
+        callback {imgView->StopFilter();}
+        xywh {280 224 156 24}
+      }
+    }
+  }
+  Function {show()} {open
+  } {
+    code {mainWindow->show();} {}
+  }
+  decl {ImgView *imgView;} {public
+  }
+  Function {hide()} {open
+  } {
+    code {mainWindow->hide();} {}
+  }
+} 

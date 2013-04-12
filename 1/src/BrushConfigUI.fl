@@ -1,0 +1,64 @@
+# data file for the Fltk User Interface Designer (fluid)
+version 1.0011 
+header_name {.h} 
+code_name {.cpp} 
+gridx 4 
+gridy 4 
+snap 4
+class BrushConfigUI {open
+} {
+  Function {BrushConfigUI()} {open
+  } {
+    Fl_Window mainWindow {
+      label {Brush Property} open
+      xywh {441 227 234 116}
+      code0 {\#include "imgflt.h"} visible
+    } {
+      Fl_Group {} {
+        label {Brush Type:} open
+        xywh {5 25 120 55} box ENGRAVED_FRAME
+      } {
+        Fl_Round_Button round {
+          label {Round Brush}
+          callback {imgView->UpdateBrushConfig();}
+          xywh {9 30 111 25} type Radio down_box ROUND_DOWN_BOX
+        }
+        Fl_Check_Button square {
+          label {Square Brush}
+          callback {imgView->UpdateBrushConfig();}
+          xywh {6 50 111 28} type Radio down_box DIAMOND_DOWN_BOX
+        }
+      }
+      Fl_Value_Slider brushSize {
+        label {Brush Size:}
+        callback {imgView->UpdateBrushConfig();} selected
+        xywh {140 25 90 20} type Horizontal align 1 when 4 maximum 20 step 1 value 10
+      }
+      Fl_Value_Slider brushOpacity {
+        label {Brush Opacity:}
+        callback {imgView->UpdateBrushConfig();}
+        xywh {140 60 90 19} type Horizontal align 1 when 4 value 1
+      }
+      Fl_Button {} {
+        label {Clean All}
+        callback {imgView->CleanBrushSelection();}
+        xywh {5 90 107 25}
+      }
+      Fl_Button {} {
+        label Close
+        callback {hide();}
+        xywh {128 90 102 25}
+      }
+    }
+  }
+  decl {ImgView *imgView;} {public
+  }
+  Function {show()} {open
+  } {
+    code {mainWindow->show();} {}
+  }
+  Function {hide()} {open
+  } {
+    code {mainWindow->hide();} {}
+  }
+} 

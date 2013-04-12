@@ -1,0 +1,149 @@
+#VRML V2.0 utf8
+
+Viewpoint {
+   fieldOfView 1.0419
+   position 2.3596 0.0000 6.9535
+   orientation 0.0 1.0 1.0 3.1416
+   description "startview"
+}
+Collision {
+    collide FALSE
+    children [
+ Shape {
+	 appearance Appearance {
+		 texture ImageTexture {
+			 url "fronthex.gif"
+		 }
+	 }
+	 geometry IndexedFaceSet {
+		 coord Coordinate {
+			 point [
+				 0.000000 0.000000 3.014579,
+				 1.000000 0.000000 3.000000,
+				 1.000000 0.000000 0.000000,
+				 0.000000 0.000000 0.000000,
+			 ]
+		 }
+		 coordIndex [
+			 0, 1, 2, 3, -1,
+		 ]
+		 texCoord TextureCoordinate {
+			 point [
+				 0.000000 -0.000000,
+				 0.958104 -0.000000,
+				 1.000000 0.995164,
+				 0.042099 1.000000,
+			 ]
+		 }
+		 texCoordIndex [
+			 0, 1, 2, 3, -1,
+		 ]
+		 solid FALSE
+	 }
+}
+ Shape {
+	 appearance Appearance {
+		 texture ImageTexture {
+			 url "righthex.gif"
+		 }
+	 }
+	 geometry IndexedFaceSet {
+		 coord Coordinate {
+			 point [
+				 1.000000 0.000000 0.000000,
+				 1.000000 0.000000 3.000000,
+				 2.000000 1.000000 2.988116,
+				 2.000000 1.000000 0.000000,
+			 ]
+		 }
+		 coordIndex [
+			 0, 1, 2, 3, -1,
+		 ]
+		 texCoord TextureCoordinate {
+			 point [
+				 -0.000000 0.000000,
+				 1.000000 0.000000,
+				 0.996039 1.000000,
+				 -0.000000 1.000000,
+			 ]
+		 }
+		 texCoordIndex [
+			 0, 1, 2, 3, -1,
+		 ]
+		 solid FALSE
+	 }
+}
+ Shape {
+	 appearance Appearance {
+		 texture ImageTexture {
+			 url "lefthex.gif"
+		 }
+	 }
+	 geometry IndexedFaceSet {
+		 coord Coordinate {
+			 point [
+				 -1.000000 1.000000 3.000000,
+				 0.000000 0.000000 3.014579,
+				 0.000000 0.000000 0.000000,
+				 -1.000000 1.000000 0.000000,
+			 ]
+		 }
+		 coordIndex [
+			 0, 1, 2, 3, -1,
+		 ]
+		 texCoord TextureCoordinate {
+			 point [
+				 0.021398 0.000000,
+				 1.000000 0.000000,
+				 0.978498 1.000000,
+				 -0.000000 0.995164,
+			 ]
+		 }
+		 texCoordIndex [
+			 0, 1, 2, 3, -1,
+		 ]
+		 solid FALSE
+	 }
+}
+ Shape {
+	 appearance Appearance {
+		 texture ImageTexture {
+			 url "tophex.gif"
+		 }
+	 }
+	 geometry IndexedFaceSet {
+		 coord Coordinate {
+			 point [
+				 0.000000 0.000000 3.014579,
+				 1.000000 0.000000 3.000000,
+				 2.000000 1.000000 2.988116,
+				 2.000000 2.000000 3.000000,
+				 1.000000 3.000000 3.000000,
+				 0.000000 3.000000 3.000000,
+				 -1.000000 2.000000 3.000000,
+				 -1.000000 1.000000 3.000000,
+			 ]
+		 }
+		 coordIndex [
+			 0, 1, 2, 3, 4, 5, 6, 7, -1,
+		 ]
+		 texCoord TextureCoordinate {
+			 point [
+				 0.330986 0.016322,
+				 0.671906 0.019717,
+				 0.998291 0.269279,
+				 0.985390 0.710818,
+				 0.678689 1.014016,
+				 0.337446 0.990751,
+				 -0.006070 0.653485,
+				 0.003204 0.325598,
+			 ]
+		 }
+		 texCoordIndex [
+			 0, 1, 2, 3, 4, 5, 6, 7, -1,
+		 ]
+		 solid FALSE
+	 }
+}
+    ]
+}

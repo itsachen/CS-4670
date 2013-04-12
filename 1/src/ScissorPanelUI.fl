@@ -1,0 +1,108 @@
+# data file for the Fltk User Interface Designer (fluid)
+version 1.0011 
+header_name {.h} 
+code_name {.cpp} 
+gridx 4 
+gridy 4 
+snap 1
+class ScissorPanelUI {open
+} {
+  Function {ScissorPanelUI()} {open
+  } {
+    Fl_Window mainWindow {
+      label {Scissor Panel UI} open
+      xywh {610 122 522 191}
+      code0 {\#include "imgflt.h"} visible
+    } {
+      Fl_Group {} {open
+        xywh {0 0 520 156} align 5
+      } {
+        Fl_Box {} {
+          label {Work Mode:}
+          xywh {1 3 95 21} align 20
+        }
+        Fl_Box {} {
+          xywh {0 24 264 32} box ENGRAVED_FRAME
+        }
+        Fl_Round_Button {} {
+          label {Image Only}
+          callback {imgView->OrigImage();}
+          xywh {1 26 103 28} type Radio down_box ROUND_DOWN_BOX
+        }
+        Fl_Round_Button contour {
+          label {Image with Contour}
+          callback {imgView->Contour();}
+          xywh {109 26 148 28} type Radio down_box ROUND_DOWN_BOX
+        }
+        Fl_Box {} {
+          label {Debug Mode:}
+          xywh {1 59 95 22} align 20
+        }
+        Fl_Box {} {
+          xywh {0 81 520 75} box ENGRAVED_FRAME
+        }
+        Fl_Round_Button {} {
+          label {Pixel Nodes}
+          callback {imgView->PixelColor();} selected
+          xywh {1 83 107 28} type Radio down_box ROUND_DOWN_BOX
+        }
+        Fl_Round_Button {} {
+          label {Cost Graph}
+          callback {imgView->CostGraph();}
+          xywh {110 83 147 28} type Radio down_box ROUND_DOWN_BOX
+        }
+        Fl_Round_Button {} {
+          label {Path Tree}
+          callback {imgView->PathTree();}
+          xywh {273 83 115 28} type Radio down_box ROUND_DOWN_BOX
+        }
+        Fl_Round_Button {} {
+          label {Minimum Path}
+          callback {imgView->MinPath();}
+          xywh {390 83 130 28} type Radio down_box ROUND_DOWN_BOX
+        }
+        Fl_Counter expanded {
+          label {Number of Expanded Nodes}
+          callback {imgView->PartialExpanding();}
+          xywh {112 113 304 20} when 4 minimum 0 maximum 0 step 1
+        }
+      }
+      Fl_Group {} {open
+        xywh {268 0 256 56} align 5
+      } {
+        Fl_Box {} {
+          xywh {268 24 252 32} box ENGRAVED_FRAME
+        }
+        Fl_Round_Button whole {
+          label {Whole Image}
+          callback {imgView->BrushSelection(0);}
+          xywh {272 26 116 28} type Radio down_box ROUND_DOWN_BOX selection_color 2
+        }
+        Fl_Round_Button {} {
+          label {Brush Selection}
+          callback {imgView->BrushSelection(1);}
+          xywh {389 26 127 28} type Radio down_box ROUND_DOWN_BOX selection_color 2
+        }
+        Fl_Box {} {
+          label {Scissor Range:}
+          xywh {268 2 132 22} align 20
+        }
+      }
+      Fl_Button {} {
+        label Close
+        callback {hide();}
+        xywh {189 159 152 28}
+      }
+    }
+  }
+  Function {show()} {open
+  } {
+    code {mainWindow->show();} {}
+  }
+  Function {hide()} {open
+  } {
+    code {mainWindow->hide();} {}
+  }
+  decl {ImgView *imgView;} {public
+  }
+} 
